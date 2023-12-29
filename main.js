@@ -21,9 +21,8 @@ const addNewTodo = () => {
 		newTodo = document.createElement('li');
 		newTodo.textContent = todoInput.value;
 
-		createToolsArea()
+		createToolsArea();
 
-		
 		ulList.append(newTodo);
 		todoInput.value = '';
 		errorInfo.textContent = '';
@@ -35,8 +34,7 @@ const addNewTodo = () => {
 const createToolsArea = () => {
 	const toolsPanel = document.createElement('div');
 	toolsPanel.classList.add('tools');
-	newTodo.append(toolsPanel)
-
+	newTodo.append(toolsPanel);
 
 	const completeBtn = document.createElement('button');
 	completeBtn.classList.add('complete');
@@ -50,7 +48,14 @@ const createToolsArea = () => {
 	deletBtn.classList.add('delete');
 	deletBtn.innerHTML = '<i class="fas fa-times"></i>';
 
-	toolsPanel.append(completeBtn, editBtn, deletBtn )
+	toolsPanel.append(completeBtn, editBtn, deletBtn);
 };
 
 document.addEventListener('DOMContentLoaded', main);
+
+
+// _____________________________
+
+// 
+
+// _________________________
