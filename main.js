@@ -1,4 +1,14 @@
-let todoInput, errorInfo, addBtn, ulList, newTodo;
+let todoInput;
+let errorInfo;
+let addBtn;
+let ulList;
+let newTodo;
+let popup;
+let popupInfo;
+let todoToEdit;
+let popupInput;
+let popupAddBtn;
+let popupCloseBtn;
 
 const main = () => {
 	prepareDOMElements();
@@ -14,6 +24,7 @@ const prepareDOMElements = () => {
 
 const prepareDOMEvents = () => {
 	addBtn.addEventListener('click', addNewTodo);
+	ulList.addEventListener('click', checkClick);
 };
 
 const addNewTodo = () => {
@@ -51,11 +62,28 @@ const createToolsArea = () => {
 	toolsPanel.append(completeBtn, editBtn, deletBtn);
 };
 
-document.addEventListener('DOMContentLoaded', main);
+const checkClick = (e) => {
+	if (e.target.matches('.complete')) {
+		e.target.closest('li').classList.toggle('completed');
+		e.target.classList.toggle('completed');
+	} else if (e.target.matches('.edit')) {
+		console.log('edit');
+	} else if (e.target.matches('.delete')) {
+		console.log('delete');
+	}
+};
 
+document.addEventListener('DOMContentLoaded', main);
 
 // _____________________________
 
-// 
+// const add = (x, y) => {
+// 	const score = x + y;
+// 	showScore(score);
+// };
+// const showScore = (score2) => {
+// 	console.log(`wynik to ${score2}`);
+// };
 
+// add(3, 5);
 // _________________________
